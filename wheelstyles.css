@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.bingo-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+#result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -200px; /* Adjust spacing here */
+}
+
+#result {
+  font-size: 288px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#hint {
+  font-size: 32px; /* Adjust hint font size */
+  margin-top: 10px; /* Add spacing between result and hint */
+}
+
+.container {
+  position: relative;
+  /* Add any other styling for your container */
+}
+
+.button-container {
+  position: absolute;
+  bottom: 20px; /* Adjust this value as needed for the desired distance from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+}
