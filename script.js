@@ -5,7 +5,8 @@ const bingoTerms = [
   "SSL", "TLS", "RDP", "FTP", "SSH", "SMB", "TCP", "UDP", "XSS", 
   "CSRF", "HTML5", "CSS3", "SATA", "USB", "VPN", "API", "SaaS", 
   "PaaS", "IaaS", "DNS", "LAN", "WAN", "UI", "UX", "CMS", "ERP", 
-  "CRM", "SMTP", "POP3", "IMAP", "RAID", "OOTBE"
+  "CRM", "SMTP", "POP3", "IMAP", "RAID", "OOTBE",      
+  "BIOS", "ISP", "JS", "OSI", "URL", "MAC", "SSID", "RSS", "BI", "CMD", "XML", "JSON", "PDF"
 ];
 
 const bingoAnswers = [
@@ -68,7 +69,21 @@ const bingoAnswers = [
   "Post Office Protocol 3",
   "Internet Message Access Protocol",
   "Redundant Array of Independent Disks",
-  "Out of the Box Experience"
+  "Out of the Box Experience",
+  
+  "Basic Input Output System",
+  "Internet Service Provider",
+  "JavaScript",
+  "Open Systems Interconnection",
+  "Uniform Resource Locator",
+  "Media Access Control",
+  "Service Set Identifier",
+  "Rich Site Summary",
+  "Business Intelligence",
+  "Command",
+  "Extensible Markup Language",
+  "JavaScript Object Notation",
+  "Portable Document Format"
 ];
 
 const bingoRiddles = [
@@ -131,7 +146,21 @@ const bingoRiddles = [
   "What protocol retrieves email from a server and stores it locally?",
   "What protocol lets you access and manage email on a server?",
   "What technology combines multiple drives for data protection and speed?",
-  "When you first install an OS and don't change any settings, what is this known as?"
+  "When you first install an OS and don't change any settings, what is this known as?",
+  
+  "Before your OS starts, the screen that adds up your RAM and other Basic devices.",
+  "Providing internet access for you and me.",
+  "Web scripting language",
+  "I'm a model for networks, layers stacked high, seven in total,",
+  "When browsing the web, I'm the address bar's friend",
+  "In networking, I ensure order and grace, controlling data access in a well-ordered space",
+  "When you're searching for Wi-Fi, look for my name",
+  "For blogs and news, I'm a handy tool, bringing updates to your feed, that's my rule.",
+  "In the corporate world, I help executives see",
+  "I'm where text commands hold great sway",
+  "In data structuring, I play a key role, using tags and elements to keep data whole",
+  "As a data format, I'm concise and neat, storing objects and arrays, making data complete",
+  "Adobe's bread and butter"
 ];
 
 const bingoCard = document.getElementById("bingo-card");

@@ -2,6 +2,9 @@ const selectButton = document.getElementById("select-button");
 const hintButton = document.getElementById("hint-button");
 const resultElement = document.getElementById("result");
 const hintElement = document.getElementById("hint");
+const termLog = document.getElementById("term-log");
+const termSet = new Set(); // To store unique terms
+
 
 let currentTermIndex = -1;
 let currentHintArrayIndex = 0; // Initialize with 0
@@ -13,6 +16,11 @@ selectButton.addEventListener("click", () => {
   resultElement.textContent = randomTerm;
   hintElement.textContent = "";
   currentHintIndex = -1; // Reset hint index
+    
+  if (!termSet.has(randomTerm)) {
+    logTerm(randomTerm);
+    termSet.add(randomTerm);
+  }
 });
 
 hintButton.addEventListener("click", () => {
@@ -35,7 +43,8 @@ const bingoTerms = [
   "SSL", "TLS", "RDP", "FTP", "SSH", "SMB", "TCP", "UDP", "XSS", 
   "CSRF", "HTML5", "CSS3", "SATA", "USB", "VPN", "API", "SaaS", 
   "PaaS", "IaaS", "DNS", "LAN", "WAN", "UI", "UX", "CMS", "ERP", 
-  "CRM", "SMTP", "POP3", "IMAP", "RAID", "OOTBE"
+  "CRM", "SMTP", "POP3", "IMAP", "RAID", "OOTBE",
+  "BIOS", "ISP", "JS", "OSI", "URL", "MAC", "SSID", "RSS", "BI", "CMD", "XML", "JSON", "PDF"
 ];
 
 const bingoHint1 = [
@@ -98,7 +107,21 @@ const bingoHint1 = [
   "What protocol retrieves email from a server and stores it locally?",
   "What protocol lets you access and manage email on a server?",
   "What technology combines multiple drives for data protection and speed?",
-  "When you first install an OS and don't change any settings, what is this known as?"
+  "When you first install an OS and don't change any settings, what is this known as?",
+  
+  "Before your OS starts, the screen that adds up your RAM and other Basic devices.",
+  "Providing internet access for you and me.",
+  "Web scripting language",
+  "I'm a model for networks, layers stacked high, seven in total,",
+  "When browsing the web, I'm the address bar's friend",
+  "In networking, I ensure order and grace, controlling data access in a well-ordered space",
+  "When you're searching for Wi-Fi, look for my name",
+  "For blogs and news, I'm a handy tool, bringing updates to your feed, that's my rule.",
+  "In the corporate world, I help executives see",
+  "I'm where text commands hold great sway",
+  "In data structuring, I play a key role, using tags and elements to keep data whole",
+  "As a data format, I'm concise and neat, storing objects and arrays, making data complete",
+  "Adobe's bread and butter"
 ];
 
 const bingoHint2 = [
@@ -161,7 +184,21 @@ const bingoHint2 = [
   "Email retrieval, a local quest.",
   "Email management, it's the best.",
   "Data protection, speed's true friend.",
-  "Initial setup, where journeys ascend."
+  "Initial setup, where journeys ascend.",
+  
+  "I'm the first code your computer meets, before the OS loads and the system beeps",
+  "Collective term for companies such as: BT, Virgin, TalkTalk and many others",
+  "Enables the use of many functions on a webpage",
+  "Not the TCP model with only 5 layers",
+  "What the address bar coverts into",
+  "The unique identifier of any device on a network (NOT the IP)",
+  "Broadcast or not, so that the device can be seen on the WiFi",
+  "Useful when creating webpages that need to be constantly updated",
+  "Occupation Smarty Pants",
+  "Not a graphical interface",
+  "Protractible, Increase, Speech",
+  "Lightweight data-interchange format",
+  "A file Format that nobody I know ever liked, yet somehow became the standard"
 ];
 
 const bingoHint3 = [
@@ -224,19 +261,48 @@ const bingoHint3 = [
   "A protocol for retrieving and storing emails locally.",
   "A protocol facilitating access and management of emails on servers.",
   "A technology combining multiple drives for data protection and speed.",
-  "The initial installation of an OS without any customization."
+  "The initial installation of an OS without any customization.",
+  
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "Plain text written in JavaScript item annotation ",
+  ""
 ];
 
 const bingoHintArrays = [bingoHint1, bingoHint2, bingoHint3];
 
-const termToHintArrayIndex = [
-  0, 1, 2, 0, 1, 2, 0, 1, 2, 0, // Indices for bingoHint1, bingoHint2, bingoHint3 for the first 10 terms
-  0, 1, 2, 0, 1, 2, 0, 1, 2, 0, // Indices for bingoHint1, bingoHint2, bingoHint3 for the next 10 terms
-  0, 1, 2, 0, 1, 2, 0, 1, 2, 0, // Indices for bingoHint1, bingoHint2, bingoHint3 for the next 10 terms
-  0, 1, 2, 0, 1, 2, 0, 1, 2, 0, // Indices for bingoHint1, bingoHint2, bingoHint3 for the next 10 terms
-  0, 1, 2, 0, 1, 2, 0, 1, 2, 0, // Indices for bingoHint1, bingoHint2, bingoHint3 for the last 9 terms
-];
-
 function getHintArrayByIndex(index) {
   return bingoHintArrays[index];
+}
+
+function logTerm(term) {
+  // Create a new term entry in the log
+  const termEntry = document.createElement("div");
+  termEntry.classList.add("term-entry");
+  termEntry.textContent = term;
+
+  // Append the term entry to the term log container
+  termLog.appendChild(termEntry);
+
+  // Scroll the log to the bottom to show the latest entry
+  termLog.scrollTop = termLog.scrollHeight;
+
+  // Sort the terms alphabetically
+  const sortedTerms = Array.from(termSet).sort();
+  termLog.innerHTML = ""; // Clear the current log
+  sortedTerms.forEach((t) => {
+    const entry = document.createElement("div");
+    entry.classList.add("term-entry");
+    entry.textContent = t;
+    termLog.appendChild(entry);
+  });
 }

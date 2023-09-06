@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="wheelstyles.css">
+  <title>Abbreviation Selector</title>
+  <style>
+    /* Add CSS styles for the term log */
+    #term-log {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #f0f0f0;
+      border-left: 1px solid #ccc;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 100%;
+    }
+
+    /* Style for individual term entries in the log */
+    .term-entry {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bingo-container">
+    <h1 class="title">Random Abbreviation Selector</h1>
+    <div id="result-container">
+      <p id="result">Answer</p>
+      <p id="hint"></p>
+      <div class="button-container">
+        <button id="select-button">Select a Term</button>
+        <button id="hint-button">Reveal a Hint</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- The term log -->
+  <div id="term-log">
+    <!-- JavaScript will add term entries here -->
+  </div>
+
+  <script src="wheelscript.js"></script>
+</body>
+</html>
